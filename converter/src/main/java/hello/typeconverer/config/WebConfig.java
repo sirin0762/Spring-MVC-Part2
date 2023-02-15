@@ -1,5 +1,6 @@
 package hello.typeconverer.config;
 
+import hello.typeconverer.converter.IpPortToStringConverter;
 import hello.typeconverer.converter.StringToIntegerConverter;
 import hello.typeconverer.converter.StringToIpPortConverter;
 import org.springframework.context.annotation.Configuration;
@@ -13,6 +14,7 @@ public class WebConfig implements WebMvcConfigurer {
     public void addFormatters(FormatterRegistry registry) {
         registry.addConverter(new StringToIntegerConverter());
         registry.addConverter(new StringToIpPortConverter());
+        registry.addConverter(new IpPortToStringConverter());
     }
 
 }
